@@ -1,0 +1,18 @@
+# Virtual Host for eduSYMS-Proposals
+# Add this to C:\xampp\apache\conf\extra\httpd-vhosts.conf
+
+<VirtualHost *:8081>
+    DocumentRoot "C:/xampp/htdocs/GitHub/eduSYMS-Proposals/proposal_generator"
+    ServerName proposals.local
+    ErrorLog "logs/proposals-error.log"
+    CustomLog "logs/proposals-access.log" common
+    
+    <Directory "C:/xampp/htdocs/GitHub/eduSYMS-Proposals/proposal_generator">
+        AllowOverride All
+        Require all granted
+        DirectoryIndex index.php index.html
+    </Directory>
+</VirtualHost>
+
+# Then add this line to C:\Windows\System32\drivers\etc\hosts
+# 127.0.0.1    proposals.local
